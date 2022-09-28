@@ -1,1 +1,10 @@
-[]
+- name: postgres
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url: postgres://postgres:postgrespassword@postgres:5433/postgres
+      isolation_level: read-committed
+      use_prepared_statements: false
+  customization:
+    naming_convention: hasura-default
+  tables: "!include postgres/tables/tables.yaml"
